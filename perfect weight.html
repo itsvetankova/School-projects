@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script language="JavaScript">
+			function prov()
+			{ var rust,ide;
+rust=document.getElementById('rust').value;
+                 if (document.getElementById('male').checked) 
+				 {
+				 ide=rust-100-((rust-150))/4;
+				 document.getElementById('ide').value=ide;
+				 }
+				 if (document.getElementById('female').checked) 
+				 {
+				 ide=rust-100-((rust-150))/2;
+				 document.getElementById('ide').value=ide;
+				 }
+                				
+			}
+			function d ()
+			{
+				var otklon;
+				otklon=document.getElementById('ide').value-document.getElementById('ide').value*0.1;
+				document.getElementById('dow').value=otklon;
+			}
+			function g ()
+			{
+				var otklona;
+				otklona=document.getElementById('ide').value+document.getElementById('ide').value*0.1;
+				document.getElementById('gor').value=otklona;
+			}
+			function te()
+			{
+				var teglo;
+				teglo=document.getElementById('teglo').value;
+				if (teglo<document.getElementById('dow').value)
+				{
+					document.getElementById("text").innerHTML="Вашето тегло е доста под нормата. Погрижете се за здравето си."
+				}
+				if (teglo>document.getElementById('gor').value)
+				{
+					document.getElementById("text").innerHTML="Теглото ви е доста над нормата. Може би трябва да спортувате."
+				}
+				if (teglo>document.getElementById('dow').value && teglo<document.getElementById('gor').value)
+				{
+					document.getElementById("text").innerHTML="Теглото ви е в нормални граници. Сигурно се чувствате отлично."
+				}
+			}
+		</script>
+		</head>
+<body>
+<b>Проверете теглото си:</b>
+<div> <form> Въведете своя ръст <input type="text" id="rust" size="10"> </br>
+             Въведете своето тегло <input type="text" id="teglo" size="10"> </br>
+             Пол <input type="radio" name="gender" id="male" value="male" > Мъж 
+                 <input type="radio" name="gender" id="female" value="female"> Жена  <input type="button" id="submit" value="Провери" onClick="prov()"> </br>
+                 
+				 <input type="button" id="submit" value="Провери" onClick="te()">
+				 <p id="text"> </p>
+				 
+            Вашето идеално тего е  <input type="text" id="ide" size="10"/> </br>
+			Долната граница на нормата е <input type="text" id="dow" size="10"/>  <input type="button" id="submit" value="Провери" onClick="d()"> </br>
+			Горната граница на нормата е <input type="text" id="gor" size="10"/> <input type="button" id="submit" value="Провери" onClick="g()"> </br>
+		    <input type="reset" name="clear" id="reset"> </form> </div>
+		
+</body>
+</html>		
